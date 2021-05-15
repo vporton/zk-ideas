@@ -7,7 +7,7 @@ Make it easy to make a contract call without revealing who called it.
 Now it can be done this way:
 
 - Make a new secret Ethereum account.
-- Transfer some ETH for gas to it.
+- Transfer some ETH for gas to it (it may also need ERC-20/NFT/etc. transfers).
 - Call the contract.
 
 This way has some deficiencies:
