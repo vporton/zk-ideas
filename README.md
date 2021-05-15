@@ -32,7 +32,7 @@ It can be easily done this way:
 
 - ("Recovery") When the caller wants to reveal his identity, he can publish the (first) ZK proof for other to verify the hash he published is of this ZK proof.
 
-Not that the process uses two ZK proofs.
+Note that the process uses two ZK proofs.
 
 The previous can be generalized by allowing to restore any of several "details" (functions of) of the call data (caller as in the previous example or any other data).
 
