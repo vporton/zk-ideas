@@ -30,7 +30,7 @@ It can be easily done this way:
 
 - Do the operation, storing also a "pointer" (that is the hash of the ZK proof) to the ZK proof from the previous item. (It can be done by a contract that calls a ZK contract together with storing that hash. So, we will have an association between the ZK proof and the operation stored in Ethereum history.)
 
-- ("Recovery") When the called wants to reveal his identity, he can publish the (first) ZK proof for other to verify the hash he published is of this ZK proof.
+- ("Recovery") When the caller wants to reveal his identity, he can publish the (first) ZK proof for other to verify the hash he published is of this ZK proof.
 
 Not that the process uses two ZK proofs.
 
