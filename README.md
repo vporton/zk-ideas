@@ -30,10 +30,18 @@ It can be easily done this way:
 
 - Do the operation, storing also a "pointer" (that is the hash of the ZK proof) to the ZK proof from the previous item. (It can be done by a contract that calls a ZK contract together with storing that hash. So, we will have an association between the ZK proof and the operation stored in Ethereum history.)
 
-- When the called wants to reveal his identity, he can publish the (first) ZK proof for other to verify the hash he published is of this ZK proof.
+- ("Recovery") When the called wants to reveal his identity, he can publish the (first) ZK proof for other to verify the hash he published is of this ZK proof.
 
 Not that the process uses two ZK proofs.
 
-The previous can be generalized by allowing to retore:
+The previous can be generalized by allowing to restore any of several "details" (functions of) of the call data (caller as in the previous example or any other data).
 
-TODO
+Arbitrary "almost Turing complete" functions of the data can be implemented as calls to other contracts (just pass the contract address, method name, and all arguments except of one).
+
+An easier (and more efficient) thing is: instead of being able to use abitrary functions, split input data into chunks (it could be: caller, ERC-20 address, payer, payee, and amount for transfers) and specify which chunks can be recovered by the keys.
+
+Moreover, the above is easy to modify to be able to specify which chunks can be recovered by which keys.
+
+The above can also be improved for using it for "multisig" recovery: a contract does a ZK operation voted by voters and the voters don't know what exactly they voted for (but they would not reasonably voted if didn't know a part of the information): For voting for recovery use a concatenation of keys (e.g. ordered by address numeric value) as the data (see below). Generally to recover on a condition (it can be in the previous example e.g. the number of voters to be >50%): create a function (e.g. a view method of a contract) from some data (e.g. a set of Ethereum addresses, in the case of voting) that produces a boolean whether the condition (e.g. majority vote) has reached: Then the data (e.g. the list of voters) would be proven by every voter publishing a ZK-proof that he/she confirms the data as "signed" by him.
+
+So, for voting we concatenate the voters' addresses and prove this data by every address in this list. More generally, the data is arbitrary (it may contain the voters, if necessary) and every voters who wishes publishes his 
