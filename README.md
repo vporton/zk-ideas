@@ -22,7 +22,7 @@ So, it could be done better in way similar to ZK transfers, but with an arbtirar
 
 ## Un-ZK
 
-I call Un-ZK a ZK action (e.g. a ZK-trasfer or a contract call with ZK of who called it) with the ability to recover who did the call and call data (e.g. contract call data or whose money are transferred to whom).
+I call Un-ZK a ZK action (e.g. a ZK-transfer or a contract call with ZK of who called it) with the ability to recover who did the call and call data (e.g. contract call data or whose money are transferred to whom).
 
 It can be easily done this way:
 
