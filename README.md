@@ -36,7 +36,7 @@ Note that the process uses two ZK proofs.
 
 The previous can be generalized by allowing to restore any of several "details" (functions of) of the call data (caller as in the previous example or any other data).
 
-Arbitrary "almost Turing complete" functions of the data can be implemented as calls to other contracts (just pass the contract address, method name, and all arguments except of one).
+Moreover, we can make "restorable" arbitrary (quickly) computable functions of the data, by storing (similar to above) hashes of ZK-proofs that the value of the function is this, that can be done by the original caller assoiating the value of the function with the hash of the original data conctenated with the caller's secret.
 
 An easier (and more efficient) thing is: instead of being able to use abitrary functions, split input data into chunks (it could be: caller, ERC-20 address, payer, payee, and amount for transfers) and specify which chunks can be recovered by the keys.
 
