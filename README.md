@@ -42,6 +42,10 @@ An easier (and more efficient) thing is: instead of being able to use abitrary f
 
 Moreover, the above is easy to modify to be able to specify which chunks can be recovered by which keys.
 
-The above can also be improved for using it for "multisig" recovery: a contract does a ZK operation voted by voters and the voters don't know what exactly they voted for (but they would not reasonably voted if didn't know a part of the information): For voting for recovery use a concatenation of keys (e.g. ordered by address numeric value) as the data (see below). Generally to recover on a condition (it can be in the previous example e.g. the number of voters to be >50%): create a function (e.g. a view method of a contract) from some data (e.g. a set of Ethereum addresses, in the case of voting) that produces a boolean whether the condition (e.g. majority vote) has reached: Then the data (e.g. the list of voters) would be proven by every voter publishing a ZK-proof that he/she confirms the data as "signed" by him.
+An improvement: Use another account for recovery (second ZF proof) than the account used to send the ZK transaction. To do this, we need to allow
 
-So, for voting we concatenate the voters' addresses and prove this data by every address in this list. More generally, the data is arbitrary (it may contain the voters, if necessary) and every voters who wishes publishes his 
+## Mutlisig ZK recovery
+
+We can do mutisig ZK recovery by using concatenation of secrets of several users as the ZK key.
+
+It could be useful to do also recovery by non-100% voting (e.g. by >50% voting), but that's not easy to invent.
