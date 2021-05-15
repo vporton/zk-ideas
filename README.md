@@ -24,7 +24,7 @@ So, it could be done better in way similar to ZK transfers, but with an arbtirar
 
 I call Un-ZK a ZK action (e.g. a ZK-transfer or a contract call with ZK of who called it) with the ability to recover who did the call and call data (e.g. contract call data or whose money are transferred to whom).
 
-It can be easily done this way:
+It can be done this way:
 
 - Store a ZK proof that the caller is going to do this operation (it can be stored in a Merkle tree, to be more efficient) but ciphered with a caller's secret that he stores somewhere (the called could store all his secrets in an online DB like Arweave or a Merkle tree in Ethereum, but ciphered with one secret, such as his Ethreum private key). We can store a hash of this proof (after joining it with the private key). Actually we need to store namely hash, for all kinds of the operations have the same length of the ZK proofs, not to be able to distinsguish between different kinds of operations. It can be either an Ethereum private key or some other secret data of the caller (the later has the advantge of not manipulating the private key in JS, what may be less dangerous for caller's security and/or require less permissions to be confirmed).
 
