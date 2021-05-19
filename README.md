@@ -2,7 +2,7 @@
 
 ## ZK contract calls
 
-Make it easy to make a contract call without revealing who called it.
+Make it easy to make a contract call without revealing who called it. (Use cases are about the same as of anonymous transfers.)
 
 Now it can be done this way:
 
@@ -23,6 +23,8 @@ So, it could be done better in way similar to ZK transfers, but with an arbtirar
 ## Un-ZK
 
 I call Un-ZK a ZK action (e.g. a ZK-transfer or a contract call with ZK of who called it) with the ability to recover who did the call and call data (e.g. contract call data or whose money are transferred to whom).
+
+Use cases: A donor may later reveal his/her identity to get fame. A spy may do some act and reveal his identity after going to another country. A husband may reveal to his wife that he made some event to happen only after having found her adultery.
 
 It can be done this way:
 
@@ -47,5 +49,7 @@ An improvement: Use another account for recovery (second ZF proof) than the acco
 ## Mutlisig ZK recovery
 
 We can do mutisig ZK recovery by using concatenation of secrets of several users as the ZK key.
+
+Usage: The same as above but for groups of people.
 
 It could be useful to do also recovery by non-100% voting (e.g. by >50% voting), but that's not easy to invent.
