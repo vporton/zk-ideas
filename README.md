@@ -53,3 +53,7 @@ We can do mutisig ZK recovery by using concatenation of secrets of several users
 Usage: The same as above but for groups of people.
 
 It could be useful to do also recovery by non-100% voting (e.g. by >50% voting), but that's not easy to invent.
+
+## Team
+
+**vporton**
